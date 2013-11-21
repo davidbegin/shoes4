@@ -1,9 +1,8 @@
 require 'swt_shoes/spec_helper'
 
 describe Shoes::Swt::Arc do
-  let(:container) { double('container', is_disposed?: false) }
-  let(:gui) { double('gui', real: container) }
-  let(:app) { double('app', gui: gui).as_null_object }
+  include_context "basic swt app"
+
   let(:left) { 100 }
   let(:top) { 200 }
   let(:width) { 300 }
