@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "after_do", "~>0.2.2"
 
   s.add_development_dependency "guard"
-  s.add_development_dependency "guard-rspec"
+  s.add_development_dependency "guard-jruby-rspec"
   s.add_development_dependency "pry"
 
   s.add_development_dependency "rspec", "~>2.10"
