@@ -21,6 +21,7 @@ class Shoes
       end
 
       def fits_in_one_layout?(layout, height)
+        return true if height == :unbounded
         layout.get_bounds.height <= height
       end
 
@@ -53,8 +54,13 @@ class Shoes
       end
 
       def available_space
-        width = parent.absolute_left + parent.width - @current_position.x
-        height = @current_position.next_line_start - @current_position.y
+        if @current_position.moving_next
+          width = parent.width
+          height = :unbounded
+        else
+          width = parent.absolute_left + parent.width - @current_position.x
+          height = @current_position.next_line_start - @current_position.y
+        end
         [width, height]
       end
 
